@@ -4,8 +4,6 @@ import (
 	"encoding/xml"
 	"errors"
 	"os"
-	"os/exec"
-	"strings"
 )
 
 type KmItem struct {
@@ -31,23 +29,15 @@ type KmMacro struct {
 }
 
 func getKmMacros() (map[string]KmMacro, error) {
-	// Allow to change the command for fetching macros, so the function could be unit-tested
-	getAllMacrosCommand := os.Getenv("GET_ALL_KM_MACROS_COMMAND")
-	if getAllMacrosCommand == "" {
-		getAllMacrosCommand = "osascript ./get_all_km_macros.scpt"
+	// Replace AppleScript execution with direct file reading
+	xmlPath := "/Applications/Alfred 5.app/Contents/Resources/km_data.xml"
+
+	// Allow override through environment variable for testing
+	if envPath := os.Getenv("KM_XML_PATH"); envPath != "" {
+		xmlPath = envPath
 	}
 
-	categoriesWithAllMacros, err := getKmCategories(getAllMacrosCommand)
-	if err != nil {
-		return nil, err
-	}
-
-	getHotkeyMacrosCommand := os.Getenv("GET_HOTKEY_KM_MACROS_COMMAND")
-	if getHotkeyMacrosCommand == "" {
-		getHotkeyMacrosCommand = "osascript ./get_hotkey_km_macros.scpt"
-	}
-
-	categoriesWithHotKeyMacros, err := getKmCategories(getHotkeyMacrosCommand)
+	categories, err := getKmCategories(xmlPath)
 	if err != nil {
 		return nil, err
 	}
@@ -55,26 +45,15 @@ func getKmMacros() (map[string]KmMacro, error) {
 	macros := make(map[string]KmMacro)
 	var uid string
 
-	for _, category := range categoriesWithAllMacros.Categories {
+	// Process all macros from the single XML file
+	for _, category := range categories.Categories {
 		for _, item := range category.Items {
 			uid = item.getValueByKey("uid")
 			macros[uid] = KmMacro{
 				UID:      uid,
 				Name:     item.getValueByKey("name"),
 				Category: category.getValueByKey("name"),
-				Hotkey:   "",
-			}
-		}
-	}
-
-	for _, category := range categoriesWithHotKeyMacros.Categories {
-		for _, item := range category.Items {
-			uid = item.getValueByKey("uid")
-			macro, isExists := macros[uid]
-			if isExists == true {
-				macro.Hotkey = item.getValueByKey("key")
-				// TODO Use pointer instead?
-				macros[uid] = macro
+				Hotkey:   item.getValueByKey("key"), // Assuming hotkey is in the same XML
 			}
 		}
 	}
@@ -82,21 +61,17 @@ func getKmMacros() (map[string]KmMacro, error) {
 	return macros, nil
 }
 
-func getKmCategories(command string) (KmCategories, error) {
-	out, err := exec.Command("sh", "-c", command).Output()
+func getKmCategories(filePath string) (KmCategories, error) {
+	// Read XML file instead of executing command
+	xmlData, err := os.ReadFile(filePath)
+	if err != nil {
+		return KmCategories{}, errors.New("Unable to read Keyboard Maestro XML file")
+	}
 
 	var categories KmCategories
+	err = xml.Unmarshal(xmlData, &categories)
 	if err != nil {
-		return categories, errors.New("Unable to get macros from Keyboard Maestro")
-	}
-
-	if !strings.Contains(string(out), "<?xml") {
-		return categories, errors.New(string(out))
-	}
-
-	err = xml.Unmarshal(out, &categories)
-	if err != nil {
-		return categories, errors.New("Unable to get macros from Keyboard Maestro")
+		return categories, errors.New("Unable to parse Keyboard Maestro XML file")
 	}
 
 	return categories, nil
