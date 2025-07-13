@@ -1,4 +1,4 @@
-# Alfred Maestro (Fork) [Download][dl]) 
+# Alfred Maestro (Fork)
 
 #### Activate any of your Keyboard Maestro macros in Alfred
 
