@@ -46,8 +46,6 @@ Simply type `km` followed by the macro name.
 | **Shift + Enter** | **Copy CLI Command**. Copies `keyboardmaestro <UID>` to clipboard. |
 | **Option + Enter** | **Reveal**. Opens the macro in Keyboard Maestro. |
 
-![Options](images/SCR-20251221-pclx.jpeg)
-
 
 ## Credits
 
