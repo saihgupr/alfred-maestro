@@ -24,9 +24,9 @@
 				<key>destinationuid</key>
 				<string>6B794F4B-9458-4E04-8F4C-01610BD7D273</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>524288</integer>
 				<key>modifiersubtext</key>
-				<string></string>
+				<string>Reveal in Keyboard Maestro</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -42,9 +42,19 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
+				<string>ACTION-COPY-SHELL</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Copy CLI command</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>ACTION-PARAM-EXEC</string>
 				<key>modifiers</key>
-				<integer>524288</integer>
+				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>Execute with parameter (Enter text)</string>
 				<key>vitoclose</key>
@@ -350,7 +360,7 @@ Twitter: @ian_sinn</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.3.0</string>
+	<string>0.3.2</string>
 	<key>webaddress</key>
 	<string>http://iansinnott.com</string>
 </dict>

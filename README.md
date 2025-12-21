@@ -1,22 +1,26 @@
 # Alfred Maestro (Enhanced)
 
-> **Note**: This is a significantly enhanced fork of [iansinnott/alfred-maestro](https://github.com/iansinnott/alfred-maestro).
+> **Note**: This fork extends the workflow by [iansinnott/alfred-maestro](https://github.com/iansinnott/alfred-maestro) with dynamic data fetching and additional modifiers.
 
-Trigger **any** Keyboard Maestro macro directly from Alfred, instantly.
+Trigger **any** Keyboard Maestro macro directly from Alfred.
 
-Unlike the original workflow which required background syncing scripts or static files, **this version communicates directly with the Keyboard Maestro Engine in real-time**.
+## Differences in this Fork
 
-## ✨ Key Features (New in v0.3.0)
+This fork builds upon the excellent foundation laid by [Ian Sinnott](http://iansinnott.com), adding new action modifiers and improving update speed.
 
-*   ⚡️ **Instant Updates**: New macros appear in Alfred immediately (1-second cache). No external sync scripts required.
-*   🔎 **Search Everything**: Finds **all** macros, including those without hotkeys assigned.
-*   ⌨️ **Rich Display**: Shows assigned Hotkeys and Typed String triggers directly in the subtitle.
-*   🚀 **New Modifiers**:
-    *   `Type` `km` `Macro Name` to search.
-    *   **Enter**: Run the macro.
-    *   **Option (⌥) + Enter**: **Execute with Parameter** (Prompts you to enter text, then passes it to the macro).
-    *   **Control (⌃) + Enter**: **Copy Shell Command** (Copies the `osascript` command to trigger this macro from the terminal).
-    *   **Command (⌘) + Enter**: **Reveal** the macro in the Keyboard Maestro editor.
+| Feature | Original (v0.2.x) | This Fork (v0.3.x) |
+| :--- | :--- | :--- |
+| **Updates** | 15-second cache. | **Instant**: 1-second cache. |
+| **Actions** | Run, Reveal. | **Run**, **Reveal**, **With Param**, **Copy Shell Command**. |
+| **Data Source** | Dynamic (AppleScript). | **Dynamic**: Improved parsing. |
+
+## Key Features
+
+*   **Instant Updates**: New macros appear in Alfred immediately.
+*   **Search Everything**: Finds all macros, including those without hotkeys assigned.
+*   **Rich Display**: Shows assigned Hotkeys and Typed String triggers directly in the subtitle.
+
+![Main Search](images/SCR-20251221-pbzf.jpeg)
 
 ## Requirements
 
@@ -32,18 +36,20 @@ Unlike the original workflow which required background syncing scripts or static
 
 Simply type `km` followed by the macro name.
 
-![Example](screen.png)
-
-### Actions
+### Actions / Modifiers
 
 | Key | Action |
 | --- | --- |
 | **Enter** | **Run** the macro immediately. |
-| **⌥ Enter** | **Run with Parameter**. A dialog will appear asking for input. |
-| **⌃ Enter** | **Copy Shell Command**. Copies `osascript -e ...` to clipboard. |
-| **⌘ Enter** | **Edit**. Opens the macro in Keyboard Maestro. |
+| **Cmd + Enter** | **Run with Parameter**. Prompts for input text. |
+| **Control + Enter** | **Copy Shell Command**. Copies `osascript` trigger to clipboard. |
+| **Shift + Enter** | **Copy CLI Command**. Copies `keyboardmaestro <UID>` to clipboard. |
+| **Option + Enter** | **Reveal**. Opens the macro in Keyboard Maestro. |
+
+![Options](images/SCR-20251221-pclx.jpeg)
+
 
 ## Credits
 
 Original workflow by [Ian Sinnott](http://iansinnott.com).
-Enhanced version maintained by [Chris Lapointe].
+Enhanced version maintained by [DiggingForDinos](https://github.com/DiggingForDinos).

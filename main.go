@@ -46,15 +46,18 @@ func run() {
 	var item *aw.Item
 	for _, macro := range macros {
 		item = wf.NewItem(macro.Name).UID(macro.UID).Valid(true).Arg(macro.UID)
-		item.NewModifier("cmd").Subtitle("Reveal macro in Keyboard Maestro").Arg(macro.UID)
+		item.NewModifier("cmd").Subtitle("Execute with parameter...").Arg(macro.UID)
 		
 		// Ctrl: Copy shell command
 		shellCmd := fmt.Sprintf("osascript -e 'tell application \"Keyboard Maestro Engine\" to do script \"%s\"'", macro.UID)
 		item.NewModifier("ctrl").Subtitle("Copy shell script trigger").Arg(shellCmd)
 
-		// Alt: Run with parameter
-		// We pass the UID, and the workflow action will handle the prompting
-		item.NewModifier("alt").Subtitle("Execute with parameter...").Arg(macro.UID)
+		// Alt: Reveal in KM (Swapped from Cmd)
+		item.NewModifier("alt").Subtitle("Reveal macro in Keyboard Maestro").Arg(macro.UID)
+
+		// Shift: Copy CLI command
+		cliCmd := fmt.Sprintf("/usr/local/bin/keyboardmaestro %s #%s", macro.UID, macro.Name)
+		item.NewModifier("shift").Subtitle("Copy CLI command").Arg(cliCmd)
 		
 		subtitle := ""
 		if macro.Hotkey != "" {
