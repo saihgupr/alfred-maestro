@@ -193,7 +193,7 @@ end tell</string>
 				<key>subtext</key>
 				<string>Execute Keyboard Maestro Macro</string>
 				<key>title</key>
-				<string>Search Macros</string>
+				<string></string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
