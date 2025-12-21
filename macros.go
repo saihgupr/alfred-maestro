@@ -26,12 +26,13 @@ type KmMacro struct {
 	UID      string
 	Name     string
 	Category string
+	TriggerString string
 	Hotkey   string
 }
 
 func getKmMacros() (map[string]KmMacro, error) {
 	// Execute the command to get KM macros (usually an AppleScript)
-	cmd := "osascript ./get_all_km_macros.scpt"
+	cmd := "osascript ./get_hotkey_km_macros.scpt"
 
 	// Allow override through environment variable for testing
 	if envCmd := os.Getenv("GET_ALL_KM_MACROS_COMMAND"); envCmd != "" {
@@ -51,10 +52,11 @@ func getKmMacros() (map[string]KmMacro, error) {
 		for _, item := range category.Items {
 			uid = item.getValueByKey("uid")
 			macros[uid] = KmMacro{
-				UID:      uid,
-				Name:     item.getValueByKey("name"),
-				Category: category.getValueByKey("name"),
-				Hotkey:   item.getValueByKey("key"), 
+				UID:           uid,
+				Name:          item.getValueByKey("name"),
+				Category:      category.getValueByKey("name"),
+				Hotkey:        item.getValueByKey("key"), 
+				TriggerString: item.getValueByKey("triggerstring"),
 			}
 		}
 	}

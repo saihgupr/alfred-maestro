@@ -30,6 +30,26 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>ACTION-COPY-SHELL</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Copy shell script trigger command</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>ACTION-PARAM-EXEC</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Execute with parameter (Enter text)</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>BFD32886-A59A-4774-B2A0-58CB7956DAF5</key>
 		<array>
@@ -168,6 +188,62 @@ end tell</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>echo -n "{query}" | pbcopy</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>ACTION-COPY-SHELL</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+  set macroUID to item 1 of argv
+  tell application "System Events"
+    activate
+    set theResult to display dialog "Enter parameter for macro:" default answer "" buttons {"Cancel", "OK"} default button "OK"
+    set param to text returned of theResult
+  end tell
+  tell application "Keyboard Maestro Engine"
+    do script macroUID with parameter param
+  end tell
+end run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>ACTION-PARAM-EXEC</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string># Alfred Maestro
@@ -200,6 +276,20 @@ Twitter: @ian_sinn</string>
 			<key>ypos</key>
 			<integer>170</integer>
 		</dict>
+		<key>ACTION-COPY-SHELL</key>
+		<dict>
+			<key>xpos</key>
+			<integer>390</integer>
+			<key>ypos</key>
+			<integer>290</integer>
+		</dict>
+		<key>ACTION-PARAM-EXEC</key>
+		<dict>
+			<key>xpos</key>
+			<integer>390</integer>
+			<key>ypos</key>
+			<integer>410</integer>
+		</dict>
 		<key>BFD32886-A59A-4774-B2A0-58CB7956DAF5</key>
 		<dict>
 			<key>xpos</key>
@@ -209,7 +299,7 @@ Twitter: @ian_sinn</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.2.4</string>
+	<string>0.3.0</string>
 	<key>webaddress</key>
 	<string>http://iansinnott.com</string>
 </dict>
