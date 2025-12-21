@@ -1,78 +1,49 @@
-# Alfred Maestro (Fork)
+# Alfred Maestro (Enhanced)
 
-#### Activate any of your Keyboard Maestro macros in Alfred
+> **Note**: This is a significantly enhanced fork of [iansinnott/alfred-maestro](https://github.com/iansinnott/alfred-maestro).
 
-This is a workflow for anyone who uses Keyboard Maestro and wishes it had built-in Alfred support. In Alfred simply type `km` followed by the name of any of your KM macros.
+Trigger **any** Keyboard Maestro macro directly from Alfred, instantly.
 
+Unlike the original workflow which required background syncing scripts or static files, **this version communicates directly with the Keyboard Maestro Engine in real-time**.
 
+## ✨ Key Features (New in v0.3.0)
+
+*   ⚡️ **Instant Updates**: New macros appear in Alfred immediately (1-second cache). No external sync scripts required.
+*   🔎 **Search Everything**: Finds **all** macros, including those without hotkeys assigned.
+*   ⌨️ **Rich Display**: Shows assigned Hotkeys and Typed String triggers directly in the subtitle.
+*   🚀 **New Modifiers**:
+    *   `Type` `km` `Macro Name` to search.
+    *   **Enter**: Run the macro.
+    *   **Option (⌥) + Enter**: **Execute with Parameter** (Prompts you to enter text, then passes it to the macro).
+    *   **Control (⌃) + Enter**: **Copy Shell Command** (Copies the `osascript` command to trigger this macro from the terminal).
+    *   **Command (⌘) + Enter**: **Reveal** the macro in the Keyboard Maestro editor.
 
 ## Requirements
 
-Alfred 3 with Powerpack and Keyboard Maestro 6.3 or greater.
-If you don't have them, go get them immediately.
-You will not regret it.
-
-- [Alfred](http://www.alfredapp.com/) (Free, but requires £17 Powerpack)
-- [Keyboard Maestro](http://www.keyboardmaestro.com/main/) (Free to try. $36/license)
-
-Both well worth the cost.
-
-
+*   [Alfred 5](https://www.alfredapp.com/) (with Powerpack)
+*   [Keyboard Maestro](https://www.keyboardmaestro.com/)
 
 ## Installation
 
-[Download the file directly][dl], then double-click _Alfred Maestro.alfredworkflow_ file to install.
-
-[dl]: https://github.com/iansinnott/alfred-maestro/releases/download/0.2.2/AlfredMaestro.alfredworkflow
-
-### Installing from sources
-You can also compile and install this workflow from sources.
-It's written in [Go](https://golang.org/), so you should install it first.
-
-1. Clone this repository
-2. Install [AwGo library](https://github.com/deanishe/awgo): `go get github.com/deanishe/awgo`
-3. Run `make pack`
-4. Double-click _Alfred Maestro.alfredworkflow_ file to install the workflow.
-
-
-
+1.  Download the latest [AlfredMaestro.alfredworkflow](./AlfredMaestro.alfredworkflow) release.
+2.  Double-click to install.
 
 ## Usage
 
-Type `km` followed by the name of any of your defined macros.
-Use <kbd>⌘</kbd> modifier to reveal the macro in Keyboard Maestro.
+Simply type `km` followed by the macro name.
 
-I also wrote a blog post on how I personally use this workflow for anyone who's interested: [Integrating Alfred and Keyboard Maestro][blogpost]
+![Example](screen.png)
 
-[blogpost]: http://blog.iansinnott.com/integrating-alfred-and-keyboard-maestro/
+### Actions
 
-![usage example screen](screen.png "Usage Example")
+| Key | Action |
+| --- | --- |
+| **Enter** | **Run** the macro immediately. |
+| **⌥ Enter** | **Run with Parameter**. A dialog will appear asking for input. |
+| **⌃ Enter** | **Copy Shell Command**. Copies `osascript -e ...` to clipboard. |
+| **⌘ Enter** | **Edit**. Opens the macro in Keyboard Maestro. |
 
-#### Update:
+## Credits
 
-Thanks to Peter Lewis of [Stairways Software][stair], the creator of Keyboard Maestro for adding a feature to KM that greatly increased the power of this workflow. Now Alfred can launch any of your macros, not just the ones with a hotkey!
-
-[stair]: http://www.stairways.com/main/
-
-
-
-## Possible Issues
-
-### Application Specific Macro Groups
-
-**Important:** If you have macros that you only want to run in certain applications read this.
-
-If you create a macro group that is _not_ set to run in all applications you will need to make sure it is set to run in Alfred in addition to whatever application you want it to run in. See [issue 5][issue5] for details.
-
-[issue5]: https://github.com/iansinnott/alfred-maestro/issues/5
-
-### _Unable to get macros from Keyboard Maestro_
-If you're using macOS Mojave and get the following error, it's very likely that Alfred doesn't have access to Keyboard Maestro. First, make sure that [Alfred has all needed access to your system](https://www.alfredapp.com/help/getting-started/macos-mojave/#integration). Then check that [Alfred could access Keyboard Maestro](https://user-images.githubusercontent.com/923973/52786326-4213cc00-3063-11e9-85d0-1b58c0ce03ae.png). If after that Alfred still doesn't show you your macros ping us in [#22](https://github.com/iansinnott/alfred-maestro/issues/22) and we'll try to help you.
-
-
-## Troubleshooting
-
-If you are having trouble, feel free to [open an issue][issues]. I try to check up on it regularly. Alternatively, ping me on Twitter: [@ian_sinn](https://twitter.com/ian_sinn)
-
-[issues]: https://github.com/iansinnott/alfred-maestro/issues
-[new-issue]: https://github.com/iansinnott/alfred-maestro/issues/new
+Original workflow by [Ian Sinnott](http://iansinnott.com).
+Enhanced version maintained by [Chris Lapointe].
