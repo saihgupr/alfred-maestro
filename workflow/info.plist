@@ -3,16 +3,52 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>iansinnott.keyboardmaestro</string>
+	<string>com.alfred-maestro.diggingfordinos.com</string>
 	<key>category</key>
-	<string>Tools</string>
+	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>417EDFE4-EEA3-4586-BACB-72B5CD1488FA</key>
+		<key>48E217FE-EFF3-4B19-86F8-2F6B228395E2</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>47DF9774-B3A1-4F9A-A39C-FDA6FE0DE22A</string>
+				<string>A1D28329-EB31-4C55-8DA1-F23AF4A5A5D6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>551A0624-7B7B-4C48-BA27-86E66F710220</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>78CDE59F-8CF2-4AC3-9208-24F3FFF104B7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>723D08B5-407A-460B-982F-5E5AD46F0F95</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>85CC176A-3003-4D08-A999-86EF11A3F12C</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Variable</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>84818E26-D78A-4421-A8F7-C52F97A2AF23</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -22,41 +58,83 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>6B794F4B-9458-4E04-8F4C-01610BD7D273</string>
-				<key>modifiers</key>
-				<integer>524288</integer>
-				<key>modifiersubtext</key>
-				<string>Reveal in Keyboard Maestro</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>ACTION-COPY-SHELL</string>
+				<string>7DB563A3-7332-4DAF-9A1C-3793453E73D7</string>
 				<key>modifiers</key>
 				<integer>262144</integer>
 				<key>modifiersubtext</key>
-				<string>Copy shell script trigger command</string>
+				<string>ID</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>ACTION-COPY-SHELL</string>
+				<string>25C97AFF-4A24-414D-B20D-C297446827B7</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F0D0035D-FFE6-41F4-95F7-B44A50E6FF10</string>
 				<key>modifiers</key>
 				<integer>131072</integer>
 				<key>modifiersubtext</key>
-				<string>Copy CLI command</string>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+		</array>
+		<key>78CDE59F-8CF2-4AC3-9208-24F3FFF104B7</key>
+		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>ACTION-PARAM-EXEC</string>
+				<string>D512D0CE-AD9F-4A62-8855-776855F2A5A4</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
-				<string>Execute with parameter (Enter text)</string>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7DB563A3-7332-4DAF-9A1C-3793453E73D7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CFF2842D-CEDF-4545-8EC9-00B04232E52A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>85CC176A-3003-4D08-A999-86EF11A3F12C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>551A0624-7B7B-4C48-BA27-86E66F710220</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A1D28329-EB31-4C55-8DA1-F23AF4A5A5D6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CFF2842D-CEDF-4545-8EC9-00B04232E52A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -65,7 +143,20 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>417EDFE4-EEA3-4586-BACB-72B5CD1488FA</string>
+				<string>723D08B5-407A-460B-982F-5E5AD46F0F95</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F0D0035D-FFE6-41F4-95F7-B44A50E6FF10</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>48E217FE-EFF3-4B19-86F8-2F6B228395E2</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -78,7 +169,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>417EDFE4-EEA3-4586-BACB-72B5CD1488FA</string>
+				<string>723D08B5-407A-460B-982F-5E5AD46F0F95</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -89,7 +180,7 @@
 		</array>
 	</dict>
 	<key>createdby</key>
-	<string>Ian Sinnott</string>
+	<string></string>
 	<key>description</key>
 	<string>Search Keyboard Maestro Macros</string>
 	<key>disabled</key>
@@ -101,33 +192,8 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
+				<key>availableviaurlhandler</key>
 				<false/>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>-- No error checking to make sure they actually have KM
--- The passed query is the UID of the macro
-tell application "Keyboard Maestro Engine"
-  do script "{query}"
-end tell</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>47DF9774-B3A1-4F9A-A39C-FDA6FE0DE22A</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>triggerid</key>
 				<string>run</string>
 			</dict>
@@ -135,6 +201,136 @@ end tell</string>
 			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
 			<string>BFD32886-A59A-4774-B2A0-58CB7956DAF5</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>km</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string></string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>551A0624-7B7B-4C48-BA27-86E66F710220</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>/usr/local/bin/keyboardmaestro {query}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D512D0CE-AD9F-4A62-8855-776855F2A5A4</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>km</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Searching Keyboard Maestro...</string>
+				<key>script</key>
+				<string>./alfred-maestro "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Execute Keyboard Maestro Macro</string>
+				<key>title</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>723D08B5-407A-460B-982F-5E5AD46F0F95</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{var:script} -p '{query}'</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>78CDE59F-8CF2-4AC3-9208-24F3FFF104B7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>script</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>85CC176A-3003-4D08-A999-86EF11A3F12C</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -172,85 +368,12 @@ end tell</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>km</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>2</integer>
-				<key>runningsubtext</key>
-				<string>Searching Keyboard Maestro...</string>
-				<key>script</key>
-				<string>./alfred-maestro "$1"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>Execute Keyboard Maestro Macro</string>
-				<key>title</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>417EDFE4-EEA3-4586-BACB-72B5CD1488FA</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>68</integer>
 				<key>script</key>
-				<string>tell application "Keyboard Maestro"
-  editMacro "{query}"
-  activate
-end tell</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>6</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>6B794F4B-9458-4E04-8F4C-01610BD7D273</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>echo -n "{query}" | pbcopy</string>
+				<string>/usr/local/bin/keyboardmaestro {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -261,7 +384,66 @@ end tell</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>ACTION-COPY-SHELL</string>
+			<string>84818E26-D78A-4421-A8F7-C52F97A2AF23</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>7DB563A3-7332-4DAF-9A1C-3793453E73D7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>CFF2842D-CEDF-4545-8EC9-00B04232E52A</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>/usr/local/bin/keyboardmaestro {query} -e</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>25C97AFF-4A24-414D-B20D-C297446827B7</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -273,19 +455,9 @@ end tell</string>
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>on run argv
-  set macroUID to item 1 of argv
-  tell application "System Events"
-    activate
-    set theResult to display dialog "Enter parameter for macro:" default answer "" buttons {"Cancel", "OK"} default button "OK"
-    set param to text returned of theResult
-  end tell
-  tell application "Keyboard Maestro Engine"
-    do script macroUID with parameter param
-  end tell
-end run</string>
+				<string>tell application "Keyboard Maestro Engine"	set myUUID to "{query}" ### Put  YOUR UUID here	set macroToken to "%MacroNameForUUID%" &amp; myUUID &amp; "%"	set myMacroName to process tokens macroTokenend tell</string>
 				<key>scriptargtype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
@@ -294,9 +466,46 @@ end run</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>ACTION-PARAM-EXEC</string>
+			<string>48E217FE-EFF3-4B19-86F8-2F6B228395E2</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>macro_id</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>F0D0035D-FFE6-41F4-95F7-B44A50E6FF10</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>/usr/local/bin/keyboardmaestro {var:macro_id} #{query}</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>A1D28329-EB31-4C55-8DA1-F23AF4A5A5D6</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -309,59 +518,120 @@ Email: http://iansinnott.com/contact
 Twitter: @ian_sinn</string>
 	<key>uidata</key>
 	<dict>
-		<key>TRIGGER-HOTKEY-3</key>
+		<key>25C97AFF-4A24-414D-B20D-C297446827B7</key>
 		<dict>
+			<key>note</key>
+			<string>Take You To Script</string>
 			<key>xpos</key>
-			<integer>40</integer>
+			<real>180</real>
 			<key>ypos</key>
-			<integer>150</integer>
+			<real>375</real>
 		</dict>
-		<key>417EDFE4-EEA3-4586-BACB-72B5CD1488FA</key>
+		<key>48E217FE-EFF3-4B19-86F8-2F6B228395E2</key>
 		<dict>
 			<key>xpos</key>
-			<integer>210</integer>
+			<real>715</real>
 			<key>ypos</key>
-			<integer>30</integer>
+			<real>410</real>
 		</dict>
-		<key>47DF9774-B3A1-4F9A-A39C-FDA6FE0DE22A</key>
+		<key>551A0624-7B7B-4C48-BA27-86E66F710220</key>
 		<dict>
 			<key>xpos</key>
-			<integer>390</integer>
+			<real>595</real>
 			<key>ypos</key>
-			<integer>30</integer>
+			<real>65</real>
 		</dict>
-		<key>6B794F4B-9458-4E04-8F4C-01610BD7D273</key>
+		<key>723D08B5-407A-460B-982F-5E5AD46F0F95</key>
 		<dict>
 			<key>xpos</key>
-			<integer>390</integer>
+			<real>270</real>
 			<key>ypos</key>
-			<integer>170</integer>
+			<real>90</real>
 		</dict>
-		<key>ACTION-COPY-SHELL</key>
+		<key>78CDE59F-8CF2-4AC3-9208-24F3FFF104B7</key>
 		<dict>
 			<key>xpos</key>
-			<integer>390</integer>
+			<real>750</real>
 			<key>ypos</key>
-			<integer>290</integer>
+			<real>95</real>
 		</dict>
-		<key>ACTION-PARAM-EXEC</key>
+		<key>7DB563A3-7332-4DAF-9A1C-3793453E73D7</key>
+		<dict>
+			<key>note</key>
+			<string>Copy Script ID</string>
+			<key>xpos</key>
+			<real>640</real>
+			<key>ypos</key>
+			<real>315</real>
+		</dict>
+		<key>84818E26-D78A-4421-A8F7-C52F97A2AF23</key>
 		<dict>
 			<key>xpos</key>
-			<integer>390</integer>
+			<real>640</real>
 			<key>ypos</key>
-			<integer>410</integer>
+			<real>185</real>
+		</dict>
+		<key>85CC176A-3003-4D08-A999-86EF11A3F12C</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>95</real>
+		</dict>
+		<key>A1D28329-EB31-4C55-8DA1-F23AF4A5A5D6</key>
+		<dict>
+			<key>note</key>
+			<string>Copy Script ID</string>
+			<key>xpos</key>
+			<real>895</real>
+			<key>ypos</key>
+			<real>440</real>
 		</dict>
 		<key>BFD32886-A59A-4774-B2A0-58CB7956DAF5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>40</integer>
+			<real>40</real>
 			<key>ypos</key>
-			<integer>30</integer>
+			<real>30</real>
+		</dict>
+		<key>CFF2842D-CEDF-4545-8EC9-00B04232E52A</key>
+		<dict>
+			<key>xpos</key>
+			<real>1015</real>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
+		<key>D512D0CE-AD9F-4A62-8855-776855F2A5A4</key>
+		<dict>
+			<key>xpos</key>
+			<real>815</real>
+			<key>ypos</key>
+			<real>65</real>
+		</dict>
+		<key>F0D0035D-FFE6-41F4-95F7-B44A50E6FF10</key>
+		<dict>
+			<key>note</key>
+			<string>Set Macro ID Variable</string>
+			<key>xpos</key>
+			<real>595</real>
+			<key>ypos</key>
+			<real>425</real>
+		</dict>
+		<key>TRIGGER-HOTKEY-3</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>150</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>0.3.2</string>
+	<string>0.3.1</string>
 	<key>webaddress</key>
-	<string>http://iansinnott.com</string>
+	<string></string>
 </dict>
 </plist>
