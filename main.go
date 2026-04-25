@@ -45,7 +45,7 @@ func run() {
 
 	var item *aw.Item
 	for _, macro := range macros {
-		item = wf.NewItem(macro.Name).UID(macro.UID).Valid(true).Arg(macro.UID)
+		item = wf.NewItem(macro.Name).UID(macro.UID).Valid(true).Arg(macro.UID).Icon(&aw.Icon{Value: "dot.png"})
 		item.NewModifier("cmd").Subtitle("Execute with parameter...").Arg(macro.UID)
 		
 		// Ctrl: Copy shell command
