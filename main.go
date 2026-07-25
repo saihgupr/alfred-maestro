@@ -48,9 +48,8 @@ func run() {
 		item = wf.NewItem(macro.Name).UID(macro.UID).Valid(true).Arg(macro.UID).Icon(&aw.Icon{Value: "dot.png"})
 		item.NewModifier("cmd").Subtitle("Execute with parameter...").Arg(macro.UID)
 		
-		// Ctrl: Copy shell command
-		shellCmd := fmt.Sprintf("osascript -e 'tell application \"Keyboard Maestro Engine\" to do script \"%s\"'", macro.UID)
-		item.NewModifier("ctrl").Subtitle("Copy shell script trigger").Arg(shellCmd)
+		// Ctrl: Copy Macro ID
+		item.NewModifier("ctrl").Subtitle("Copy Macro ID").Arg(macro.UID)
 
 		// Alt: Reveal in KM (Swapped from Cmd)
 		item.NewModifier("alt").Subtitle("Reveal macro in Keyboard Maestro").Arg(macro.UID)

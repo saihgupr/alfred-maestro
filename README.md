@@ -11,7 +11,7 @@ This fork builds upon the excellent foundation laid by [Ian Sinnott](http://ians
 | Feature | Original (v0.2.x) | This Fork (v0.3.x) |
 | :--- | :--- | :--- |
 | **Updates** | 15-second cache. | **Instant**: 1-second cache. |
-| **Actions** | Run, Reveal. | **Run**, **Reveal**, **With Param**, **Copy Shell Command**. |
+| **Actions** | Run, Reveal. | **Run**, **Reveal**, **With Param**, **Copy Macro ID**. |
 | **Data Source** | Dynamic (AppleScript). | **Dynamic**: Improved parsing. |
 
 ## Key Features
@@ -42,7 +42,7 @@ Simply type `km` followed by the macro name.
 | --- | --- |
 | **Enter** | **Run** the macro immediately. |
 | **Cmd + Enter** | **Run with Parameter**. Prompts for input text. |
-| **Control + Enter** | **Copy Shell Command**. Copies `osascript` trigger to clipboard. |
+| **Control + Enter** | **Copy Macro ID**. Copies macro ID to clipboard. |
 | **Shift + Enter** | **Copy CLI Command**. Copies `keyboardmaestro <UID>` to clipboard. |
 | **Option + Enter** | **Reveal**. Opens the macro in Keyboard Maestro. |
 
@@ -50,4 +50,4 @@ Simply type `km` followed by the macro name.
 ## Credits
 
 Original workflow by [Ian Sinnott](http://iansinnott.com).
-Enhanced version maintained by [DiggingForDinos](https://github.com/DiggingForDinos).
+Enhanced version maintained by [saihgupr](https://github.com/saihgupr).
