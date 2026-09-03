@@ -391,23 +391,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>passthroughargument</key>
-				<true/>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>7DB563A3-7332-4DAF-9A1C-3793453E73D7</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
@@ -423,6 +406,23 @@
 			<string>CFF2842D-CEDF-4545-8EC9-00B04232E52A</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>7DB563A3-7332-4DAF-9A1C-3793453E73D7</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -494,7 +494,7 @@
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>/usr/local/bin/keyboardmaestro {var:macro_id} #{query}</string>
+				<string>{var:macro_id}</string>
 				<key>passthroughargument</key>
 				<false/>
 				<key>variables</key>
@@ -523,9 +523,9 @@ Twitter: @ian_sinn</string>
 			<key>note</key>
 			<string>Take You To Script</string>
 			<key>xpos</key>
-			<real>180</real>
+			<real>270</real>
 			<key>ypos</key>
-			<real>375</real>
+			<real>355</real>
 		</dict>
 		<key>48E217FE-EFF3-4B19-86F8-2F6B228395E2</key>
 		<dict>
@@ -597,9 +597,9 @@ Twitter: @ian_sinn</string>
 		<key>CFF2842D-CEDF-4545-8EC9-00B04232E52A</key>
 		<dict>
 			<key>xpos</key>
-			<real>1015</real>
+			<real>1030</real>
 			<key>ypos</key>
-			<real>330</real>
+			<real>285</real>
 		</dict>
 		<key>D512D0CE-AD9F-4A62-8855-776855F2A5A4</key>
 		<dict>

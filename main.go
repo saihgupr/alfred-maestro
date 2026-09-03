@@ -43,8 +43,16 @@ func run() {
 		return
 	}
 
+	args := wf.Args()
+	var searchQuery string
+	if len(args) > 0 {
+		searchQuery = args[0]
+	}
+
+	filteredMacros := SearchMacros(macros, searchQuery)
+
 	var item *aw.Item
-	for _, macro := range macros {
+	for _, macro := range filteredMacros {
 		item = wf.NewItem(macro.Name).UID(macro.UID).Valid(true).Arg(macro.UID).Icon(&aw.Icon{Value: "dot.png"})
 		item.NewModifier("cmd").Subtitle("Execute with parameter...").Arg(macro.UID)
 		
@@ -74,17 +82,12 @@ func run() {
 		}
 	}
 
-	args := wf.Args()
-	var searchQuery string
-	if len(args) > 0 {
-		searchQuery = args[0]
-	}
-
-	if searchQuery == "" {
-		wf.WarnEmpty("No macros found", "It seems that you haven't created any macros yet.")
-	} else {
-		wf.Filter(searchQuery)
-		wf.WarnEmpty("No macros found", "Try a different query.")
+	if len(filteredMacros) == 0 {
+		if searchQuery == "" {
+			wf.WarnEmpty("No macros found", "It seems that you haven't created any macros yet.")
+		} else {
+			wf.WarnEmpty("No macros found", "Try a different query.")
+		}
 	}
 
 	wf.SendFeedback()
