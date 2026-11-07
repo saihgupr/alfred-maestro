@@ -373,9 +373,13 @@
 				<key>escaping</key>
 				<integer>68</integer>
 				<key>script</key>
-				<string>/usr/local/bin/keyboardmaestro {query}</string>
+				<string>if [ -n "$2" ]; then
+	/usr/local/bin/keyboardmaestro "$1" -p "$2"
+else
+	/usr/local/bin/keyboardmaestro "$1"
+fi</string>
 				<key>scriptargtype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
