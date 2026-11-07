@@ -41,10 +41,13 @@ Simply type `km` followed by the macro name.
 | Key | Action |
 | --- | --- |
 | **Enter** | **Run** the macro immediately. |
+| **Tab** | **Run with Parameter**. Autocompletes to `Macro Name -> `, type the parameter, then **Enter** to run. |
 | **Cmd + Enter** | **Run with Parameter**. Prompts for input text. |
 | **Control + Enter** | **Copy Macro ID**. Copies macro ID to clipboard. |
 | **Shift + Enter** | **Copy CLI Command**. Copies `keyboardmaestro <UID>` to clipboard. |
 | **Option + Enter** | **Reveal**. Opens the macro in Keyboard Maestro. |
+
+![Run with parameter via Tab](images/tab-parameter.jpeg)
 
 
 ## Credits
