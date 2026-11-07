@@ -44,3 +44,22 @@ func TestFindMacro(t *testing.T) {
 		t.Fatalf("Expected no match for empty name, got %+v", macro)
 	}
 }
+
+func TestLookupMacroByUID(t *testing.T) {
+	macros := []KmMacro{
+		{UID: "1", Name: "Random Reddit"},
+		{UID: "2", Name: "Restart Home Assistant"},
+	}
+
+	if macro := lookupMacroByUID(macros, "2"); macro == nil || macro.Name != "Restart Home Assistant" {
+		t.Fatalf("Expected UID lookup to find macro, got %+v", macro)
+	}
+
+	if macro := lookupMacroByUID(macros, "missing"); macro != nil {
+		t.Fatalf("Expected no match for unknown UID, got %+v", macro)
+	}
+
+	if macro := lookupMacroByUID(macros, ""); macro != nil {
+		t.Fatalf("Expected no match for empty UID, got %+v", macro)
+	}
+}

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strings"
 	"time"
 
@@ -10,9 +11,17 @@ import (
 
 var wf *aw.Workflow
 
-// parameterSeparator is appended to a macro name by Tab autocomplete. Anything
-// typed after it is passed to the macro as its parameter.
+// parameterSeparator marks the parameter in a manually typed query like
+// "Macro Name -> hello". (Tab entry uses session variables instead, so the
+// input field holds only the parameter text.)
 const parameterSeparator = " ->"
+
+// Session variables used to remember which macro Tab was pressed on. Alfred
+// passes these back in as environment variables when the script reruns.
+const (
+	sessionMacroUID  = "am_macro_uid"
+	sessionMacroName = "am_macro_name"
+)
 
 // splitParameterQuery splits a query like "Macro Name -> hello" into the macro
 // name and parameter. hasParameter is false when the separator isn't present.
@@ -43,6 +52,44 @@ func findMacro(macros []KmMacro, name string) *KmMacro {
 	}
 
 	return &matches[0]
+}
+
+// lookupMacroByUID returns the macro with the given UID, or nil.
+func lookupMacroByUID(macros []KmMacro, uid string) *KmMacro {
+	if uid == "" {
+		return nil
+	}
+
+	for i := range macros {
+		if macros[i].UID == uid {
+			return &macros[i]
+		}
+	}
+
+	return nil
+}
+
+// emitParameterItem shows the single "run this macro with this parameter"
+// result. autocomplete controls what Tab puts back into the input.
+func emitParameterItem(macro *KmMacro, parameter string, autocomplete string) {
+	title := parameter
+	if title == "" {
+		title = macro.Name
+	}
+
+	item := wf.NewItem(title).
+		UID(macro.UID+"-parameter").
+		Arg(macro.UID, parameter).
+		Autocomplete(autocomplete).
+		Icon(&aw.Icon{Value: "dot.png"})
+
+	if parameter == "" {
+		item.Subtitle("Type a parameter, then press Enter").Valid(false)
+	} else {
+		item.Subtitle(fmt.Sprintf("Run \"%s\"", macro.Name)).Valid(true)
+	}
+
+	wf.SendFeedback()
 }
 
 func run() {
@@ -85,8 +132,9 @@ func run() {
 		searchQuery = args[0]
 	}
 
-	// Tab autocompletes a result to "Macro Name -> ". Anything after the
-	// separator is passed to the macro as its parameter.
+	// The macro's identity travels in the query text ("Macro Name -> param"),
+	// because that is what Alfred hands back after Tab. A session variable
+	// takes over only when the query carries no separator.
 	if name, parameter, hasParameter := splitParameterQuery(searchQuery); hasParameter {
 		macro := findMacro(macros, name)
 		if macro == nil {
@@ -95,19 +143,13 @@ func run() {
 			return
 		}
 
-		item := wf.NewItem(fmt.Sprintf("Run \"%s\" with parameter", macro.Name)).
-			UID(macro.UID+"-parameter").
-			Arg(macro.UID, parameter).
-			Autocomplete(macro.Name + parameterSeparator + " " + parameter).
-			Icon(&aw.Icon{Value: "dot.png"})
+		emitParameterItem(macro, parameter, name+parameterSeparator+" "+parameter)
+		return
+	}
 
-		if parameter == "" {
-			item.Subtitle("Type a parameter, then press Enter").Valid(false)
-		} else {
-			item.Subtitle("Parameter: " + parameter).Valid(true)
-		}
-
-		wf.SendFeedback()
+	if macro := lookupMacroByUID(macros, os.Getenv(sessionMacroUID)); macro != nil {
+		parameter := strings.TrimSpace(searchQuery)
+		emitParameterItem(macro, parameter, parameter)
 		return
 	}
 
@@ -119,7 +161,9 @@ func run() {
 			UID(macro.UID).
 			Valid(true).
 			Arg(macro.UID).
-			Autocomplete(macro.Name + parameterSeparator + " ").
+			Autocomplete(macro.Name+parameterSeparator+" ").
+			Var(sessionMacroUID, macro.UID).
+			Var(sessionMacroName, macro.Name).
 			Icon(&aw.Icon{Value: "dot.png"})
 		item.NewModifier("cmd").Subtitle("Execute with parameter...").Arg(macro.UID)
 
